@@ -2,36 +2,62 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+        <item android:title="@string/linux">
+            <menu>
+                <item
+                    android:id="@+id/nav_sudoLinux"
+                    android:checkable="true"
+                    android:icon="@drawable/ic_sudolinux"
+                    android:title="Scripts" />
+                <item
+                    android:id="@+id/nav_nonsudolinux"
+                    android:checkable="true"
+                    android:enabled="true"
+                    android:icon="@drawable/ic_meme"
+                    android:title="Non-sudo scripts"
+                    android:visible="true" />
+                <item
+                    android:id="@+id/nav_gallery"
+                    android:checkable="true"
+                    android:enabled="true"
+                    android:icon="@drawable/ic_apt_get"
+                    android:title="Packages"
+                    android:visible="true" />
+            </menu>
+        </item>
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Windows">
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:icon="@drawable/ic_windowsuac"
+                android:title="Scripts and debloat" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:icon="@drawable/ic_memedows"
+                android:title="Non-admin scripts" />
+            <item
+                android:id="@+id/nav_tools"
+                android:icon="@drawable/ic_msstore"
+                android:title="Tools" />
+        </menu>
+    </item>
+    <item android:title="macOS">
+        <menu>
+            <item
+                android:id="@+id/nav_view"
+                android:icon="@drawable/ic_macossudo"
+                android:title="Scripts and settings" />
+            <item
+                android:id="@+id/nav_nonsudomacos"
+                android:icon="@drawable/ic_macosdefault"
+                android:title="Non-admin scripts" />
+            <item
+                android:id="@+id/nav_toolsmacos"
+                android:icon="@drawable/ic_macosutils"
+                android:title="Utilities" />
         </menu>
     </item>
 

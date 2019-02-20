@@ -3,6 +3,9 @@ package com.jbenis.techtoolkit;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.graphics.drawable.VectorDrawableCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +18,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private Menu menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+        navigationView.setItemIconTintList(null);
+
     }
 
     @Override
@@ -56,7 +63,13 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+        MenuItem cancelMenuItem = menu.getItem(0);
+
+        this.menu = menu;
+        VectorDrawableCompat vectorDrawableCompat = VectorDrawableCompat.create(getResources(), R.drawable.vd_test_vd, null);
+        MenuItem menuItem = menu.getItem(0).setIcon(ContextCompat.getDrawable(this, R.drawable.vd_test_vd));
+
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -80,17 +93,23 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_nonsudolinux) {
             // Handle the camera action
+        } else if (id == R.id.nav_sudoLinux) {
+
         } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
+
+        } else if (id == R.id.nav_tools) {
+
+        } else if (id == R.id.nav_view) {
+
+        } else if (id == R.id.nav_nonsudomacos) {
+
+        } else if (id == R.id.nav_toolsmacos) {
 
         }
 
